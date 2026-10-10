@@ -10,3 +10,4 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: node --check dist/app.js
+      - run: npm run verify:evidence

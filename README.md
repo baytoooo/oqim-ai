@@ -29,7 +29,7 @@ The road model is a deterministic 1-second fluid queue simulation (fractional ve
 
 External queues count in delay and remaining demand. Every comparison receives exactly the same arrival array. Storage is reserved before simultaneous transfers; generated vehicles equal completed plus all remaining queues and travel cohorts.
 
-Fixed: 25 s main green. Reactive: green allocation proportional to observed queues. OQIM: each minute uses past 60 s arrivals, rolls out 90 s across the network, and tests ±5 s changes to each node's main green with a network delay objective. Predicted candidate changes and actual changes respect each node's cycle boundary. Future demand events are not given to the controller. Main green 15–39 s; cycle 60 s; side green 50 minus main green; each change has 3 s yellow and 2 s clearance. Offsets are supplied by configuration, not automatically optimised. There is no explicit pedestrian phase or emergency-vehicle integration.
+Fixed: 25 s main green. Reactive: green allocation proportional to observed queues. OQIM: each minute uses past 60 s arrivals, rolls out 90 s across the network, and tests ±5 s changes to each node's main green with a network delay objective. Predicted candidate changes and actual changes respect each node's cycle boundary. Future random arrivals are not given to the controller. The scenario blockage schedule is known to the model. Main green 15–39 s; cycle 60 s; side green 50 minus main green; each change has 3 s yellow and 2 s clearance. Offsets are supplied by configuration, not automatically optimised. There is no explicit pedestrian phase or emergency-vehicle integration.
 
 The parking scenario adds a declared outflow at the final node at 360–420 s and reduces approach throughput. A separate video module measures user-defined parking rectangles by tracked vehicle centres. Occupancy is not automatically equated with parking outflow. Blockage reduces middle-node saturation at 240–420 s. These are scenario assumptions, not detected facts.
 
@@ -66,8 +66,23 @@ Parking occupancy and possible stationary vehicles: set rectangles before analys
 
 ## Verification receipt
 
-13 automated checks pass. `cv-smoke-results.json` records real browser inference on both licensed clips: 120 frames per 12-second clip. Day took 10.71 s (42.64 ms mean inference), night 9.16 s (39.65 ms). These are measured on this development machine, not universal speed promises. The detected crossing counts are not manually validated ground truth. Occlusion, clipping and fragmentation remain limitations; do not present these as accuracy or real-city results.
+21 automated checks pass in version1.1. `cv-smoke-results.json` records real browser inference on both licensed clips: 120 frames per 12-second clip. Day took 10.71 s (42.64 ms mean inference), night 9.16 s (39.65 ms). These are measured on this development machine, not universal speed promises. These original day/night smoke-test counts are not ground truth. The separate v1.1 A40 evaluation below uses external labels. Occlusion, clipping and fragmentation remain limitations; do not present these as accuracy or real-city results.
 
 Public demo: https://baytoooo.github.io/oqim-ai/
 Sites mirror (deployment succeeded, but connection failed during our external check): https://oqim-ai-network-lab.bayt.chatgpt.site
 Public source: https://github.com/baytoooo/oqim-ai
+
+
+## Version1.1: reviewable evidence
+
+`npm test` runs21 regression checks. `npm run benchmark` regenerates `dist/evidence/network-benchmark.json` from a fixed120-scenario Cartesian grid. OQIM mean delay reduction:24.55% against fixed (104wins,16losses),20.06% against reactive (118wins,2losses). Worst cases:28.56% more delay than fixed,11.56% more than reactive. No cases are removed. These are synthetic model results, not city savings. The browser quality tab also recomputes the full grid in a Web Worker on the judge's device.
+
+`npm run evaluate:cv` scores `evaluation/motorway-measurement.json`, captured from real browser inference, against unmodified external labels. A40:16predicted crossings,17reference events,16strict temporal matches,0false positives,1miss; precision1.000,recall0.941,F1=0.970. All7certain labels match. Labels10/17are probable, only one daylight scene,960pxtranscode. Protocol frozen in commitc268abc before first inference. This does not establish general vehicle accuracy, mAP, IDF1, night/rain quality or performance on local vehicles. See evaluation/PROTOCOL.md, reference/LABELLING_RECORD.md and dist/evidence/cv-evaluation.json for signed errors and tolerances.
+
+Measured on AppleM5,16GiBRAM,Chromium in Codex,WebGPU:245frames of24.5svideo in14.55 s; mean inference34.5ms. Decode, drawing and inference are included in total wall time. Model loading excluded. The first download is about46MB and can be slow; reload uses browser CacheStorage. No mobilehardware speed claim. Models are included for running the local server without a third-party inference service.
+
+To reproduce from pixels: open Video analytics, select A40, load YOLO26s, keep confidence30%,10Hz,bottom-centre,gatey80%,x6–46%,analyse and export JSON. Select downward flow before transfer. A raw user upload follows the same pipeline and gets its own SHA-256; sample identity is not used by detection or counting. Saved reference counts are only in the evidence tab and never supplied to the model.
+
+Directional transfer avoids mixing opposing traffic. The approximate95%Poisson score interval concerns sampling noise at a constant arrival rate; detector errors and nonstationarity are excluded. Shortwindows are clearly marked. Sensitivity runs use lower/central/upper rates as three separate scenarios, not a confidence interval of road improvement. Invalidated line/anchor/threshold settings clear old measurements. All samples use the same detector and tracker.
+
+`PILOT_PLAN.md` contains a proposed2-weekpilot, acceptance targets, customerinterviewquestions and unit-economics assumptions. No customer interviews, paid pilots or savings are claimed. Entry price,subscription and expenses are hypotheses. Actual operational value cannot be replaced with simulated traffic percentages.

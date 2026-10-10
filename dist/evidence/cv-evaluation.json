@@ -1,0 +1,678 @@
+{
+  "schema": "oqim.cv-evaluation.v1",
+  "reference": {
+    "repository": "https://github.com/safdar-hussain1/trafficlens",
+    "commit": "f0eaf0181c1d25e2c05ef95ae7f3cc312e3e1150",
+    "author": "Safdar Hussain",
+    "license": "MIT",
+    "certain": 7,
+    "probable": 10
+  },
+  "video": {
+    "name": "./samples/motorway-a40.mp4",
+    "sha256": "15becae21a01e218563886b0277d9907f87913a3967d99ba1eaaa1b34fd2f7f1",
+    "bytes": 3243768,
+    "sampleId": "motorway"
+  },
+  "model": "YOLO26s",
+  "backend": "webgpu",
+  "gate": {
+    "start": 0.06,
+    "end": 0.46,
+    "anchor": "bottom"
+  },
+  "line": 0.8,
+  "threshold": 0.3,
+  "samplingHz": 10,
+  "hardware": "Apple M5, 16 GiB RAM, macOS, Chromium in Codex",
+  "predicted": 16,
+  "referenceCount": 17,
+  "absoluteCountError": 1,
+  "strict": {
+    "intervalFrames": [
+      -1,
+      4
+    ],
+    "fps": 30,
+    "matching": "greedy nearest absolute frame error, ties prediction then label index",
+    "tp": 16,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1,
+    "recall": 0.9411764705882353,
+    "f1": 0.9696969696969697,
+    "maximumCardinalityTP": 16,
+    "certainMatched": 7,
+    "certainTotal": 7,
+    "matches": [
+      {
+        "prediction": {
+          "time": 2.5055352842982304,
+          "confirmedAt": 2.8,
+          "class": "car",
+          "id": 1000006,
+          "x": 0.4024699195008745,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 3,
+          "frame": 75,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 2.5
+        },
+        "signedFrameError": 0.16605852894690543
+      },
+      {
+        "prediction": {
+          "time": 13.87487100882969,
+          "confirmedAt": 14.1,
+          "class": "truck",
+          "id": 1000023,
+          "x": 0.34715615974990055,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 11,
+          "frame": 416,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 13.866666666666667
+        },
+        "signedFrameError": 0.2461302648906667
+      },
+      {
+        "prediction": {
+          "time": 13.684379388206748,
+          "confirmedAt": 14,
+          "class": "car",
+          "id": 1000029,
+          "x": 0.40202350928506286,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 10,
+          "frame": 411,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 13.7
+        },
+        "signedFrameError": -0.4686183537975239
+      },
+      {
+        "prediction": {
+          "time": 15.788680917863246,
+          "confirmedAt": 16.1,
+          "class": "car",
+          "id": 1000060,
+          "x": 0.40913184822533744,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 12,
+          "frame": 473,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 15.766666666666667
+        },
+        "signedFrameError": 0.6604275358973837
+      },
+      {
+        "prediction": {
+          "time": 10.727409274321865,
+          "confirmedAt": 11,
+          "class": "car",
+          "id": 1000021,
+          "x": 0.40321838883259525,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 9,
+          "frame": 321,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 10.7
+        },
+        "signedFrameError": 0.8222782296559217
+      },
+      {
+        "prediction": {
+          "time": 4.496248036288706,
+          "confirmedAt": 4.8,
+          "class": "car",
+          "id": 1000005,
+          "x": 0.40183997821108053,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 5,
+          "frame": 134,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 4.466666666666667
+        },
+        "signedFrameError": 0.887441088661177
+      },
+      {
+        "prediction": {
+          "time": 22.37070595497991,
+          "confirmedAt": 22.6,
+          "class": "car",
+          "id": 1000111,
+          "x": 0.4059362303376249,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 16,
+          "frame": 670,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 22.333333333333332
+        },
+        "signedFrameError": 1.1211786493972795
+      },
+      {
+        "prediction": {
+          "time": 5.539422102095164,
+          "confirmedAt": 5.8,
+          "class": "car",
+          "id": 1000013,
+          "x": 0.3299362412536464,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 6,
+          "frame": 165,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 5.5
+        },
+        "signedFrameError": 1.1826630628549424
+      },
+      {
+        "prediction": {
+          "time": 0.21387172017168224,
+          "confirmedAt": 0.5,
+          "class": "car",
+          "id": 1000002,
+          "x": 0.401757223638029,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 1,
+          "frame": 5,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 0.16666666666666666
+        },
+        "signedFrameError": 1.4161516051504668
+      },
+      {
+        "prediction": {
+          "time": 0.4490000200196199,
+          "confirmedAt": 0.6,
+          "class": "car",
+          "id": 1000003,
+          "x": 0.32355810140195934,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 2,
+          "frame": 12,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 0.4
+        },
+        "signedFrameError": 1.4700006005885982
+      },
+      {
+        "prediction": {
+          "time": 3.1548870785122856,
+          "confirmedAt": 3.4,
+          "class": "car",
+          "id": 1000009,
+          "x": 0.3237955198132239,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 4,
+          "frame": 93,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 3.1
+        },
+        "signedFrameError": 1.6466123553685605
+      },
+      {
+        "prediction": {
+          "time": 19.98933087685303,
+          "confirmedAt": 20.2,
+          "class": "car",
+          "id": 1000105,
+          "x": 0.4007412774139345,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 14,
+          "frame": 598,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 19.933333333333334
+        },
+        "signedFrameError": 1.6799263055908114
+      },
+      {
+        "prediction": {
+          "time": 17.62302436832301,
+          "confirmedAt": 17.8,
+          "class": "truck",
+          "id": 1000071,
+          "x": 0.3322466090705508,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 13,
+          "frame": 527,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 17.566666666666666
+        },
+        "signedFrameError": 1.690731049690271
+      },
+      {
+        "prediction": {
+          "time": 21.634877242728916,
+          "confirmedAt": 21.8,
+          "class": "truck",
+          "id": 1000034,
+          "x": 0.33862376329812827,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 15,
+          "frame": 647,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 21.566666666666666
+        },
+        "signedFrameError": 2.0463172818674593
+      },
+      {
+        "prediction": {
+          "time": 8.630817792996769,
+          "confirmedAt": 8.9,
+          "class": "car",
+          "id": 1000011,
+          "x": 0.40370930949824047,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 8,
+          "frame": 256,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 8.533333333333333
+        },
+        "signedFrameError": 2.92453378990308
+      },
+      {
+        "prediction": {
+          "time": 6.531839455675295,
+          "confirmedAt": 6.8,
+          "class": "car",
+          "id": 1000010,
+          "x": 0.40786167986661337,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 7,
+          "frame": 192,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 6.4
+        },
+        "signedFrameError": 3.955183670258833
+      }
+    ]
+  },
+  "coarseDiagnostic": {
+    "toleranceSeconds": 0.5,
+    "classMatching": false,
+    "tp": 16,
+    "fp": 0,
+    "fn": 1,
+    "predicted": 16,
+    "reference": 17,
+    "precision": 1,
+    "recall": 0.9411764705882353,
+    "f1": 0.9696969696969697,
+    "absoluteCountError": 1,
+    "meanTimingErrorSeconds": 0.04663385910941669,
+    "matches": [
+      {
+        "prediction": {
+          "time": 0.21387172017168224,
+          "confirmedAt": 0.5,
+          "class": "car",
+          "id": 1000002,
+          "x": 0.401757223638029,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 1,
+          "frame": 5,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 0.16666666666666666
+        },
+        "errorSeconds": 0.04720505350501558
+      },
+      {
+        "prediction": {
+          "time": 0.4490000200196199,
+          "confirmedAt": 0.6,
+          "class": "car",
+          "id": 1000003,
+          "x": 0.32355810140195934,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 2,
+          "frame": 12,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 0.4
+        },
+        "errorSeconds": 0.049000020019619894
+      },
+      {
+        "prediction": {
+          "time": 2.5055352842982304,
+          "confirmedAt": 2.8,
+          "class": "car",
+          "id": 1000006,
+          "x": 0.4024699195008745,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 3,
+          "frame": 75,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 2.5
+        },
+        "errorSeconds": 0.0055352842982303585
+      },
+      {
+        "prediction": {
+          "time": 3.1548870785122856,
+          "confirmedAt": 3.4,
+          "class": "car",
+          "id": 1000009,
+          "x": 0.3237955198132239,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 4,
+          "frame": 93,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 3.1
+        },
+        "errorSeconds": 0.05488707851228547
+      },
+      {
+        "prediction": {
+          "time": 4.496248036288706,
+          "confirmedAt": 4.8,
+          "class": "car",
+          "id": 1000005,
+          "x": 0.40183997821108053,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 5,
+          "frame": 134,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 4.466666666666667
+        },
+        "errorSeconds": 0.029581369622039055
+      },
+      {
+        "prediction": {
+          "time": 5.539422102095164,
+          "confirmedAt": 5.8,
+          "class": "car",
+          "id": 1000013,
+          "x": 0.3299362412536464,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 6,
+          "frame": 165,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 5.5
+        },
+        "errorSeconds": 0.03942210209516439
+      },
+      {
+        "prediction": {
+          "time": 6.531839455675295,
+          "confirmedAt": 6.8,
+          "class": "car",
+          "id": 1000010,
+          "x": 0.40786167986661337,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 7,
+          "frame": 192,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 6.4
+        },
+        "errorSeconds": 0.1318394556752942
+      },
+      {
+        "prediction": {
+          "time": 8.630817792996769,
+          "confirmedAt": 8.9,
+          "class": "car",
+          "id": 1000011,
+          "x": 0.40370930949824047,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 8,
+          "frame": 256,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 8.533333333333333
+        },
+        "errorSeconds": 0.09748445966343589
+      },
+      {
+        "prediction": {
+          "time": 10.727409274321865,
+          "confirmedAt": 11,
+          "class": "car",
+          "id": 1000021,
+          "x": 0.40321838883259525,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 9,
+          "frame": 321,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 10.7
+        },
+        "errorSeconds": 0.02740927432186524
+      },
+      {
+        "prediction": {
+          "time": 13.684379388206748,
+          "confirmedAt": 14,
+          "class": "car",
+          "id": 1000029,
+          "x": 0.40202350928506286,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 10,
+          "frame": 411,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 13.7
+        },
+        "errorSeconds": 0.015620611793250916
+      },
+      {
+        "prediction": {
+          "time": 13.87487100882969,
+          "confirmedAt": 14.1,
+          "class": "truck",
+          "id": 1000023,
+          "x": 0.34715615974990055,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 11,
+          "frame": 416,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 13.866666666666667
+        },
+        "errorSeconds": 0.00820434216302246
+      },
+      {
+        "prediction": {
+          "time": 15.788680917863246,
+          "confirmedAt": 16.1,
+          "class": "car",
+          "id": 1000060,
+          "x": 0.40913184822533744,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 12,
+          "frame": 473,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 15.766666666666667
+        },
+        "errorSeconds": 0.022014251196578627
+      },
+      {
+        "prediction": {
+          "time": 17.62302436832301,
+          "confirmedAt": 17.8,
+          "class": "truck",
+          "id": 1000071,
+          "x": 0.3322466090705508,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 13,
+          "frame": 527,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 17.566666666666666
+        },
+        "errorSeconds": 0.05635770165634213
+      },
+      {
+        "prediction": {
+          "time": 19.98933087685303,
+          "confirmedAt": 20.2,
+          "class": "car",
+          "id": 1000105,
+          "x": 0.4007412774139345,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 14,
+          "frame": 598,
+          "class": "car",
+          "direction": "down",
+          "confidence": "certain",
+          "time": 19.933333333333334
+        },
+        "errorSeconds": 0.05599754351969466
+      },
+      {
+        "prediction": {
+          "time": 21.634877242728916,
+          "confirmedAt": 21.8,
+          "class": "truck",
+          "id": 1000034,
+          "x": 0.33862376329812827,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 15,
+          "frame": 647,
+          "class": "truck",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 21.566666666666666
+        },
+        "errorSeconds": 0.06821057606224912
+      },
+      {
+        "prediction": {
+          "time": 22.37070595497991,
+          "confirmedAt": 22.6,
+          "class": "car",
+          "id": 1000111,
+          "x": 0.4059362303376249,
+          "direction": "down"
+        },
+        "reference": {
+          "id": 16,
+          "frame": 670,
+          "class": "car",
+          "direction": "down",
+          "confidence": "probable",
+          "time": 22.333333333333332
+        },
+        "errorSeconds": 0.03737262164657906
+      }
+    ]
+  },
+  "elapsedSeconds": 14.547400000095367,
+  "inferenceMeanMs": 34.453469385419574,
+  "limitations": "One daylight clip, transcoded960px, partly uncertain external labels, no per-class accuracy, no night/rain/local or mobile validation. Coarse diagnostic is not the reference protocol and cannot replace the strict score.",
+  "displaySummary": "A40: 16 пересечений против 17 внешних меток, ошибка общего счёта 1. Строгое совпадение по времени (−1/+4 кадра): 16/17, F1 97.0%. По уверенным меткам: 7/7. При диагностическом допуске ±0,5 с: 16/17. 245 кадров за 14.5 с на Apple M5 / 16 ГБ (webgpu). Совпадение итогового количества не означает правильность отдельных событий."
+}

@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {Tracker} from '../dist/tracker.js';import{summarizeFlow,matchCrossings}from'../dist/measurement.js';
+const box=(x,y)=>({class:'car',score:.9,bbox:[x,y,.1,.1]});
+function crossing(x,gate){const tr=new Tracker(10);for(let i=0;i<60;i++)tr.update([box(x,.2+i*.007)],i/10,.5,gate);return tr;}
+test('bounded gate excludes adjacent carriageway',()=>{assert.equal(crossing(.7,{start:.05,end:.4}).events.length,0);assert.equal(crossing(.2,{start:.05,end:.4}).events.length,1);});
+test('bottom and centre anchors describe different crossing times',()=>{const a=crossing(.2,{anchor:'bottom'}),b=crossing(.2,{anchor:'centre'});assert.equal(a.events.length,1);assert.ok(b.events[0].time-a.events[0].time>.5);assert.equal(a.events[0].direction,'down');});
+test('appearance in hysteresis band is not a crossing',()=>{const tr=new Tracker(10);for(let i=0;i<20;i++)tr.update([box(.3,.447+i*.001)],i/10,.5);assert.equal(tr.events.length,0);});
+test('reappearing track after a time gap does not invent a crossing',()=>{const tr=new Tracker(10);for(let i=0;i<10;i++)tr.update([box(.3,.42)],i/10,.5);for(let i=0;i<10;i++)tr.update([box(.3,.48)],10+i/10,.5);assert.equal(tr.events.length,0);});
+test('directional flow never mixes opposite travel into a road entrance',()=>{const m={duration:12,complete:true,events:[{direction:'down'},{direction:'down'},{direction:'up'}]};assert.equal(summarizeFlow(m,'down').rate,600);assert.equal(summarizeFlow(m,'up').rate,300);assert.equal(summarizeFlow(m,'all').rate,900);const f=summarizeFlow(m,'down');assert.ok(f.interval95[0]<f.rate&&f.interval95[1]>f.rate);assert.ok(f.shortWindow);assert.throws(()=>summarizeFlow({...m,duration:0}));});
+test('zero observed vehicles does not imply certain zero traffic',()=>{const f=summarizeFlow({duration:12,events:[],complete:true});assert.equal(f.rate,0);assert.equal(f.interval95[0],0);assert.ok(f.interval95[1]>1000);});
+test('event matching cannot reuse labels and preserves direction',()=>{const p=[{time:1,direction:'down'},{time:1.1,direction:'down'},{time:4,direction:'up'}],r=[{time:1,direction:'down'},{time:4,direction:'down'}];const m=matchCrossings(p,r,.5);assert.deepEqual([m.tp,m.fp,m.fn],[1,2,1]);});
+test('maximum matching handles overlapping time windows',()=>{const p=[{time:1.3,direction:'down'},{time:1.7,direction:'down'}],r=[{time:1,direction:'down'},{time:1.4,direction:'down'}];assert.equal(matchCrossings(p,r,.5).tp,2);});
