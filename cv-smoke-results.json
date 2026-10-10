@@ -1,0 +1,33 @@
+{
+  "kind": "browser-smoke-test-not-accuracy-benchmark",
+  "date": "2026-10-10",
+  "browser": "Chromium 154 macOS ARM64, Codex in-app browser",
+  "model": "YOLO26s",
+  "backend": "webgpu",
+  "samplingHz": 10,
+  "tests": [
+    {
+      "sample": "Street traffic, first12s,480px",
+      "line": 0.55,
+      "frames": 120,
+      "total": 4,
+      "counts": {
+        "car": 0,
+        "bus": 2,
+        "truck": 2,
+        "motorcycle": 0
+      },
+      "elapsedSeconds": 10.7085,
+      "inferenceMeanMs": 42.6375
+    },
+    {
+      "sample": "Avtocesta, first12s,960px",
+      "line": 0.75,
+      "frames": 120,
+      "total": 1,
+      "elapsedSeconds": 9.157,
+      "inferenceMeanMs": 39.65
+    }
+  ],
+  "limitations": "No manual ground truth established. Counts can be wrong due to occlusion, box clipping, class changes or track fragmentation. These results verify real inference execution, not accuracy. Local vehicles and mobile performance untested."
+}

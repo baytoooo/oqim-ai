@@ -1,0 +1,804 @@
+{
+  "kind": "synthetic benchmark",
+  "node": "v26.7.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "createdAt": "2026-10-10T20:58:11.894Z",
+  "rows": [
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 1,
+        "rate": 400,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 99.5465,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 202,
+            "completed": 193.99999999999974,
+            "remaining": 8.000000000000256,
+            "delay": 2824.590312500002,
+            "meanDelay": 13.9831203589109,
+            "maxQueue": 11.9,
+            "overload": 0,
+            "conservationError": 2.5579538487363607e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 202,
+            "completed": 194.38749999999945,
+            "remaining": 7.612500000000551,
+            "delay": 3117.2404749999982,
+            "meanDelay": 15.431883539603952,
+            "maxQueue": 9,
+            "overload": 0,
+            "conservationError": 5.400124791776761e-13
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 202,
+            "completed": 194.25499999999937,
+            "remaining": 7.74500000000063,
+            "delay": 2909.9487499999955,
+            "meanDelay": 14.405686881188096,
+            "maxQueue": 10.3,
+            "overload": 0,
+            "conservationError": 6.252776074688882e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 1,
+        "rate": 650,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 54.03595800000001,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 268,
+            "completed": 258.99999999999835,
+            "remaining": 9.000000000001648,
+            "delay": 6029.8772375000135,
+            "meanDelay": 22.4995419309702,
+            "maxQueue": 29.500000000000018,
+            "overload": 0,
+            "conservationError": 1.6484591469634324e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 268,
+            "completed": 258.53249999999736,
+            "remaining": 9.467500000002644,
+            "delay": 6170.427300000066,
+            "meanDelay": 23.023982462686813,
+            "maxQueue": 13.99000000000002,
+            "overload": 0,
+            "conservationError": 2.6716406864579767e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 268,
+            "completed": 256.7717499999982,
+            "remaining": 11.228250000001822,
+            "delay": 4544.965825000006,
+            "meanDelay": 16.9588277052239,
+            "maxQueue": 21.50000000000002,
+            "overload": 0,
+            "conservationError": 1.8189894035458565e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 1,
+        "rate": 1200,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 22.317207999999994,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 397,
+            "completed": 324.770999999999,
+            "remaining": 72.22900000000101,
+            "delay": 27123.19414999987,
+            "meanDelay": 68.32038828715332,
+            "maxQueue": 75.69999999999985,
+            "overload": 368,
+            "conservationError": 1.4210854715202004e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 397,
+            "completed": 370.7602499999992,
+            "remaining": 26.23975000000081,
+            "delay": 18315.00478749998,
+            "meanDelay": 46.13351331863975,
+            "maxQueue": 44.20000000000003,
+            "overload": 91,
+            "conservationError": 7.958078640513122e-13
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 397,
+            "completed": 383.786775000001,
+            "remaining": 13.213224999999,
+            "delay": 13438.604037500021,
+            "meanDelay": 33.85038800377839,
+            "maxQueue": 52.20000000000005,
+            "overload": 129,
+            "conservationError": 9.094947017729282e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 7,
+        "rate": 400,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 18.211624999999998,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 196,
+            "completed": 189.99999999999983,
+            "remaining": 6.0000000000001705,
+            "delay": 2694.7881374999965,
+            "meanDelay": 13.748919068877534,
+            "maxQueue": 13.3,
+            "overload": 0,
+            "conservationError": 1.7053025658242404e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 196,
+            "completed": 188.53587499999955,
+            "remaining": 7.46412500000045,
+            "delay": 3109.2010499999933,
+            "meanDelay": 15.863270663265272,
+            "maxQueue": 13.3,
+            "overload": 0,
+            "conservationError": 4.547473508864641e-13
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 196,
+            "completed": 190.14999999999975,
+            "remaining": 5.85000000000025,
+            "delay": 2523.275137499991,
+            "meanDelay": 12.873852742346894,
+            "maxQueue": 10.3,
+            "overload": 0,
+            "conservationError": 2.5579538487363607e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 7,
+        "rate": 650,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 13.61937500000002,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 257,
+            "completed": 251.99999999999835,
+            "remaining": 5.0000000000016485,
+            "delay": 5338.076575000024,
+            "meanDelay": 20.770725972762737,
+            "maxQueue": 24.900000000000016,
+            "overload": 0,
+            "conservationError": 1.6484591469634324e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 257,
+            "completed": 252.85549999999748,
+            "remaining": 4.144500000002523,
+            "delay": 4895.500925,
+            "meanDelay": 19.04864173151751,
+            "maxQueue": 11,
+            "overload": 0,
+            "conservationError": 2.5579538487363607e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 257,
+            "completed": 251.38012499999843,
+            "remaining": 5.619875000001571,
+            "delay": 3910.8991375,
+            "meanDelay": 15.21750637159533,
+            "maxQueue": 15,
+            "overload": 0,
+            "conservationError": 1.5916157281026244e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 7,
+        "rate": 1200,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 8.064334000000002,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 398,
+            "completed": 325.2292499999983,
+            "remaining": 72.77075000000173,
+            "delay": 24744.016699999993,
+            "meanDelay": 62.17089623115576,
+            "maxQueue": 68.49999999999972,
+            "overload": 349,
+            "conservationError": 2.1032064978498966e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 398,
+            "completed": 373.41813749999835,
+            "remaining": 24.581862500001648,
+            "delay": 15967.316212500062,
+            "meanDelay": 40.11888495603031,
+            "maxQueue": 33.200000000000024,
+            "overload": 8,
+            "conservationError": 1.4779288903810084e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 398,
+            "completed": 379.74513749999966,
+            "remaining": 18.254862500000343,
+            "delay": 9118.766749999993,
+            "meanDelay": 22.91147424623114,
+            "maxQueue": 36.00000000000003,
+            "overload": 27,
+            "conservationError": 3.410605131648481e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 42,
+        "rate": 400,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 7.759957999999983,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 240,
+            "completed": 237.9999999999992,
+            "remaining": 2.000000000000796,
+            "delay": 3188.839262500001,
+            "meanDelay": 13.286830260416671,
+            "maxQueue": 12,
+            "overload": 0,
+            "conservationError": 7.958078640513122e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 240,
+            "completed": 237.9999999999987,
+            "remaining": 2.0000000000013074,
+            "delay": 3786.1349999999757,
+            "meanDelay": 15.775562499999898,
+            "maxQueue": 12,
+            "overload": 0,
+            "conservationError": 1.3073986337985843e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 240,
+            "completed": 237.9999999999992,
+            "remaining": 2.000000000000796,
+            "delay": 3167.4392625000005,
+            "meanDelay": 13.197663593750002,
+            "maxQueue": 12,
+            "overload": 0,
+            "conservationError": 7.958078640513122e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 42,
+        "rate": 650,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.552875,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 315,
+            "completed": 301.9999999999982,
+            "remaining": 13.000000000001819,
+            "delay": 5733.559437500017,
+            "meanDelay": 18.201775992063546,
+            "maxQueue": 22.600000000000016,
+            "overload": 0,
+            "conservationError": 1.8189894035458565e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 315,
+            "completed": 301.2626249999977,
+            "remaining": 13.737375000002316,
+            "delay": 6176.614787500011,
+            "meanDelay": 19.608300912698446,
+            "maxQueue": 14.050000000000002,
+            "overload": 0,
+            "conservationError": 2.3305801732931286e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 315,
+            "completed": 302.31499999999784,
+            "remaining": 12.685000000002162,
+            "delay": 5009.040162500013,
+            "meanDelay": 15.901714801587344,
+            "maxQueue": 12.100000000000003,
+            "overload": 0,
+            "conservationError": 2.1600499167107046e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 42,
+        "rate": 1200,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.748625000000004,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 440,
+            "completed": 361.0762499999985,
+            "remaining": 78.92375000000152,
+            "delay": 26525.90847499989,
+            "meanDelay": 60.28615562499975,
+            "maxQueue": 75.29999999999959,
+            "overload": 370,
+            "conservationError": 1.9326762412674725e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 440,
+            "completed": 406.0332499999999,
+            "remaining": 33.966750000000104,
+            "delay": 17999.917012500067,
+            "meanDelay": 40.908902301136514,
+            "maxQueue": 39.50000000000001,
+            "overload": 39,
+            "conservationError": 5.684341886080802e-14
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 440,
+            "completed": 420.6578875000013,
+            "remaining": 19.342112499998677,
+            "delay": 11791.974987499967,
+            "meanDelay": 26.799943153409014,
+            "maxQueue": 38.100000000000016,
+            "overload": 26,
+            "conservationError": 1.3642420526593924e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 123,
+        "rate": 400,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.020375000000001,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 233,
+            "completed": 226.6315249999992,
+            "remaining": 6.368475000000814,
+            "delay": 3450.6903750000174,
+            "meanDelay": 14.809829935622393,
+            "maxQueue": 14.6,
+            "overload": 0,
+            "conservationError": 8.242295734817162e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 233,
+            "completed": 224.19499999999866,
+            "remaining": 8.805000000001343,
+            "delay": 3885.687012500016,
+            "meanDelay": 16.676768293991486,
+            "maxQueue": 11.403499999999989,
+            "overload": 0,
+            "conservationError": 1.3358203432289883e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 233,
+            "completed": 225.6016374999989,
+            "remaining": 7.398362500001099,
+            "delay": 3181.564912500013,
+            "meanDelay": 13.654785032188897,
+            "maxQueue": 9,
+            "overload": 0,
+            "conservationError": 1.1084466677857563e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 123,
+        "rate": 650,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.4232920000000036,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 296,
+            "completed": 286.4992499999988,
+            "remaining": 9.500750000001176,
+            "delay": 8314.019712500045,
+            "meanDelay": 28.087904434121775,
+            "maxQueue": 30.500000000000014,
+            "overload": 0,
+            "conservationError": 1.0800249583553523e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 296,
+            "completed": 287.3734749999983,
+            "remaining": 8.62652500000172,
+            "delay": 6019.131449999974,
+            "meanDelay": 20.33490354729721,
+            "maxQueue": 14.50000000000001,
+            "overload": 0,
+            "conservationError": 1.7053025658242404e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 296,
+            "completed": 284.3076249999983,
+            "remaining": 11.692375000001675,
+            "delay": 5074.983349999991,
+            "meanDelay": 17.14521402027024,
+            "maxQueue": 20.00000000000002,
+            "overload": 0,
+            "conservationError": 1.6484591469634324e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 123,
+        "rate": 1200,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.851709000000028,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 433,
+            "completed": 335.7701124999993,
+            "remaining": 97.2298875000007,
+            "delay": 32584.158912499934,
+            "meanDelay": 75.25209910508067,
+            "maxQueue": 95.29999999999964,
+            "overload": 379,
+            "conservationError": 1.0800249583553523e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 433,
+            "completed": 376.4999999999988,
+            "remaining": 56.500000000001194,
+            "delay": 27546.314575000033,
+            "meanDelay": 63.61735467667444,
+            "maxQueue": 52.400000000000034,
+            "overload": 207,
+            "conservationError": 1.0800249583553523e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 433,
+            "completed": 397.2556000000009,
+            "remaining": 35.744399999999075,
+            "delay": 16912.934462499972,
+            "meanDelay": 39.059894832563444,
+            "maxQueue": 53.400000000000034,
+            "overload": 220,
+            "conservationError": 6.252776074688882e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 999,
+        "rate": 400,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 6.340791999999965,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 228,
+            "completed": 222.99999999999915,
+            "remaining": 5.000000000000853,
+            "delay": 3013.1207124999974,
+            "meanDelay": 13.215441721491217,
+            "maxQueue": 12.3,
+            "overload": 0,
+            "conservationError": 8.526512829121202e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 228,
+            "completed": 222.9999999999984,
+            "remaining": 5.000000000001592,
+            "delay": 3688.6372999999903,
+            "meanDelay": 16.178233771929783,
+            "maxQueue": 9,
+            "overload": 0,
+            "conservationError": 1.5916157281026244e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 228,
+            "completed": 222.99999999999906,
+            "remaining": 5.000000000000938,
+            "delay": 2949.1718624999917,
+            "meanDelay": 12.93496430921049,
+            "maxQueue": 11,
+            "overload": 0,
+            "conservationError": 9.379164112033322e-13
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 999,
+        "rate": 650,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 10.364000000000033,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 305,
+            "completed": 294.99999999999943,
+            "remaining": 10.000000000000568,
+            "delay": 6314.796575000013,
+            "meanDelay": 20.704251065573814,
+            "maxQueue": 29.500000000000018,
+            "overload": 0,
+            "conservationError": 5.684341886080801e-13
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 305,
+            "completed": 294.68249999999796,
+            "remaining": 10.317500000002042,
+            "delay": 6194.309212500021,
+            "meanDelay": 20.309210532786956,
+            "maxQueue": 15,
+            "overload": 0,
+            "conservationError": 2.0463630789890885e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 305,
+            "completed": 295.14999999999895,
+            "remaining": 9.850000000001046,
+            "delay": 4993.294737500019,
+            "meanDelay": 16.37145815573777,
+            "maxQueue": 20.800000000000015,
+            "overload": 0,
+            "conservationError": 1.0231815394945443e-12
+          }
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "seconds": 600,
+        "seed": 999,
+        "rate": 1200,
+        "side": 180,
+        "event": true,
+        "block": false,
+        "parking": 0
+      },
+      "runtimeMs": 8.40254200000004,
+      "results": [
+        {
+          "mode": "fixed",
+          "metrics": {
+            "generated": 443,
+            "completed": 341.07011249999863,
+            "remaining": 101.92988750000137,
+            "delay": 34535.761625000036,
+            "meanDelay": 77.95882985327322,
+            "maxQueue": 103.99999999999967,
+            "overload": 370,
+            "conservationError": 1.7621459846850485e-12
+          }
+        },
+        {
+          "mode": "reactive",
+          "metrics": {
+            "generated": 443,
+            "completed": 376.0700000000017,
+            "remaining": 66.9299999999983,
+            "delay": 27117.451875000002,
+            "meanDelay": 61.21320965011287,
+            "maxQueue": 52.2,
+            "overload": 268,
+            "conservationError": 1.5347723092418164e-12
+          }
+        },
+        {
+          "mode": "predictive",
+          "metrics": {
+            "generated": 443,
+            "completed": 404.2241000000005,
+            "remaining": 38.775899999999524,
+            "delay": 18907.03311249986,
+            "meanDelay": 42.67953298532699,
+            "maxQueue": 52.900000000000006,
+            "overload": 271,
+            "conservationError": 5.684341886080802e-14
+          }
+        }
+      ]
+    }
+  ]
+}
