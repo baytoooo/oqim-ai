@@ -68,5 +68,6 @@ Parking occupancy and possible stationary vehicles: set rectangles before analys
 
 13 automated checks pass. `cv-smoke-results.json` records real browser inference on both licensed clips: 120 frames per 12-second clip. Day took 10.71 s (42.64 ms mean inference), night 9.16 s (39.65 ms). These are measured on this development machine, not universal speed promises. The detected crossing counts are not manually validated ground truth. Occlusion, clipping and fragmentation remain limitations; do not present these as accuracy or real-city results.
 
-Public demo: https://oqim-ai-network-lab.bayt.chatgpt.site
+Public demo: https://baytoooo.github.io/oqim-ai/
+Sites mirror (deployment succeeded, but connection failed during our external check): https://oqim-ai-network-lab.bayt.chatgpt.site
 Public source: https://github.com/baytoooo/oqim-ai
