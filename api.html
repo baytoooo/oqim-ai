@@ -1,0 +1,9 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>OQIM · API</title><link rel="stylesheet" href="style.css"><body><main style="margin:0;max-width:1000px"><a href="/">← Приложение</a><h1>Формат данных и JavaScript API</h1><p>Открытые ES-модули выполняются в браузере и Node.js. У этой версии нет серверного REST API.</p><pre style="white-space:pre-wrap;background:#111b26;padding:24px">import { network, demand, compare } from './engine.js';
+const nodes = network(4);
+const settings = { seconds: 600, rate: 650, side: 180, seed: 42 };
+const inputs = demand(nodes, settings);
+const results = compare(nodes, inputs, settings);</pre><h2>Узел сети</h2><pre style="white-space:pre-wrap">{
+  "id": "J1", "next": "J2", "capacity": 35,
+  "travel": 12, "turn": 0.15,
+  "saturation": 0.7, "offset": 0
+}</pre><p>next: следующий узел или null. capacity: машин на входящем участке. travel: секунд до стоп-линии после прибытия из предыдущего узла. turn: доля основного потока, покидающая сеть. saturation: машин/с зелёного. offset: смещение цикла, 0–59 с.</p><p>inputs[t][i] = {main, side}: неотрицательное количество машин, прибывающих на вход узла i за секунду t. Основной внешний спрос ожидает за границей сети, если участок заполнен. Боковой поток ожидает в отдельной очереди.</p><h2>Отчёт oqim.report.v1</h2><p>createdAt, source, network, parameters, inputs, results, runtimeMs, userAgent. В results есть mode, metrics, frames и decisions. В локальной истории inputs опущены ради объёма; их можно восстановить по parameters и seed.</p><h2>Измерение oqim.measurement.v1</h2><p>Время анализа, модель, backend, длительность, число обработанных кадров, счётчик классов, события пересечения линии, скорость обработки. events: {time, class, id, direction}. Измерение не содержит видео, лиц и номеров.</p></main></body></html>
