@@ -37,3 +37,21 @@ export function drawRoad3D(canvas,{nodes,frame,index=0,angle=-25,mode}){
  text('ОСНОВНОЙ ПОТОК →',24,h-40,14,'#89efc8');text(`Связь: ${node.id} → ${node.next||'выход из сети'} · в пути: ${fmt(transit)}`,24,h-18,13,'#aac0cc');
  text('Оранжевые — очередь · зелёные — поток между узлами',w-450,h-18,12,'#aac0cc');
 }
+
+// Network view uses actual directed links and source-tagged in-transit cohorts.
+export function drawNetwork3D(canvas,{nodes,frame,index=0,angle=-25,mode,fraction=0}){
+ const c=canvas.getContext('2d'),w=canvas.width,h=canvas.height,cols=Math.min(4,nodes.length),rows=Math.ceil(nodes.length/cols);
+ const yaw=angle*Math.PI/360,co=Math.cos(yaw),si=Math.sin(yaw),scale=Math.min(1,(h-135)/(rows*135));
+ const world=nodes.map((_,i)=>({x:(i%cols-(cols-1)/2)*235,y:(Math.floor(i/cols)-(rows-1)/2)*245}));
+ const p=(x,y,z=0)=>({x:w/2+(x*co-y*si)*scale,y:h/2+25+(x*si+y*co)*.48*scale-z*scale});
+ function polygon(vertices,color){c.fillStyle=color;c.beginPath();vertices.forEach((v,i)=>{const a=p(...v);i?c.lineTo(a.x,a.y):c.moveTo(a.x,a.y);});c.closePath();c.fill();}
+ function box(x,y,dx,dy,dz,color){polygon([[x,y,0],[x+dx,y,0],[x+dx,y,dz],[x,y,dz]],'#375760');polygon([[x+dx,y,0],[x+dx,y+dy,0],[x+dx,y+dy,dz],[x+dx,y,dz]],'#47636c');polygon([[x,y,dz],[x+dx,y,dz],[x+dx,y+dy,dz],[x,y+dy,dz]],color);}
+ function road(a,b,width,color){const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,nx=-dy/len*width/2,ny=dx/len*width/2;polygon([[a.x+nx,a.y+ny,0],[b.x+nx,b.y+ny,0],[b.x-nx,b.y-ny,0],[a.x-nx,a.y-ny,0]],color);}
+ c.fillStyle='#101f2b';c.fillRect(0,0,w,h);c.fillStyle='#cce6e9';c.font='bold 22px sans-serif';c.fillText(`Вся сеть · ${mode}`,24,34);c.font='14px sans-serif';c.fillStyle='#9db9c5';c.fillText('Зелёные группы едут по стрелкам. Оранжевые ждут перед светофором.',24,60);
+ // Draw roads before elevated objects so roads never cover the cars.
+ nodes.forEach((n,i)=>{const a=world[i],j=nodes.findIndex(v=>v.id===n.next);road({x:a.x-100,y:a.y},{x:a.x+95,y:a.y},52,'#354a59');road({x:a.x,y:a.y-78},{x:a.x,y:a.y+66},35,'#354a59');if(j>=0)road(a,world[j],48,'#354a59');});
+ nodes.forEach((n,i)=>{const a=world[i],j=nodes.findIndex(v=>v.id===n.next),s=frame?.nodes[i];if(j>=0){const b=world[j],m=p((a.x+b.x)/2,(a.y+b.y)/2),dx=b.x-a.x,dy=b.y-a.y;const u=p(a.x+dx*.58,a.y+dy*.58);c.strokeStyle='#7ba49e';c.lineWidth=2;c.beginPath();c.moveTo(m.x,m.y);c.lineTo(u.x,u.y);c.stroke();const theta=Math.atan2(u.y-m.y,u.x-m.x);c.beginPath();c.moveTo(u.x-9*Math.cos(theta-.5),u.y-9*Math.sin(theta-.5));c.lineTo(u.x,u.y);c.lineTo(u.x-9*Math.cos(theta+.5),u.y-9*Math.sin(theta+.5));c.stroke();const batches=(frame?.nodes[j]?.batches||[]).filter(v=>v.from===n.id);for(const batch of batches.slice(0,12)){const f=Math.max(0,Math.min(.98,1-(batch.eta-fraction)/nodes[j].travel));box(a.x+dx*f-7,a.y+dy*f+14,14,8,7,'#70e4b7');}}
+ for(let k=0;k<Math.min(6,Math.ceil(s?.q||0));k++)box(a.x-30-k*12,a.y+10,10,7,6,'#edb96a');for(let k=0;k<Math.min(4,Math.ceil(s?.side||0));k++)box(a.x+8,a.y-28-k*12,7,10,6,'#edb96a');box(a.x+24,a.y-24,4,4,35,'#a5bcc1');const light=p(a.x+26,a.y-22,40);c.fillStyle=s?.phase==='main'?'#70e4b7':s?.phase==='yellow'?'#edb96a':'#ef7883';c.beginPath();c.arc(light.x,light.y,6*scale,0,Math.PI*2);c.fill();});
+ const hits=nodes.map((n,i)=>{const a=world[i],loc=p(a.x,a.y),s=frame?.nodes[i],label=p(a.x,a.y-90);c.fillStyle=i===index?'#234f46':'#152b38';c.fillRect(label.x-70,label.y-40,140,52);c.strokeStyle=i===index?'#70e4b7':'#395363';c.strokeRect(label.x-70,label.y-40,140,52);c.textAlign='center';c.font='bold 16px sans-serif';c.fillStyle='#e0f4f1';c.fillText(n.id.slice(0,14),label.x,label.y-20);c.font='12px sans-serif';c.fillStyle='#edb96a';c.fillText(`Очередь ${(s?.q||0).toFixed(1)}`,label.x,label.y);c.textAlign='left';return {...loc,index:i};});
+ c.font='13px sans-serif';c.fillStyle='#a6bfca';c.fillText('Объёмная схема: положение узлов условное. 1 зелёный значок = группа потока, не отдельная машина.',24,h-24);return hits;
+}
