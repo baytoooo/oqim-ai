@@ -15,3 +15,11 @@ test('tracker keeps vertically separated vehicles distinct',()=>{const tr=new Tr
 
 import{ iouDistance }from'../dist/vendor/tracker.js';
 test('IoU is symmetric and zero for vertically disjoint boxes',()=>{const a={xyxy:()=>[0,0,10,10]},b={xyxy:()=>[0,20,10,30]};assert.deepEqual(iouDistance([a,b],[a,b]),[0,1,1,0]);});
+test('one-second playback preserves outcomes and attributes cohorts to real directed links',()=>{
+ const n=network(3);n[0].next='J3';n[1].next='J3';const options={seconds:150,rate:1800,side:240,seed:17};const inputs=demand(n,options),coarse=compare(n,inputs,options),fine=compare(n,inputs,{...options,snapshotEvery:1});
+ for(let m=0;m<fine.length;m++){
+  assert.deepEqual(fine[m].metrics,coarse[m].metrics);assert.equal(fine[m].frames.length,150);
+  for(const f of coarse[m].frames){const actual=fine[m].frames[f.t-1];assert.equal(actual.t,f.t);assert.deepEqual(actual.nodes.map(({batches,...s})=>s),f.nodes);}
+  let groups=0;for(const f of fine[m].frames)f.nodes.forEach((s,i)=>{assert.ok(Math.abs(s.transit-s.batches.reduce((a,b)=>a+b.count,0))<1e-9);for(const b of s.batches){groups++;assert.equal(n.find(x=>x.id===b.from).next,n[i].id);assert.ok(b.eta>0&&b.eta<=n[i].travel);}});assert.ok(groups>0);
+ }
+});

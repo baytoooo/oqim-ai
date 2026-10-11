@@ -86,3 +86,9 @@ To reproduce from pixels: open Video analytics, select A40, load YOLO26s, keep c
 Directional transfer avoids mixing opposing traffic. The approximate95%Poisson score interval concerns sampling noise at a constant arrival rate; detector errors and nonstationarity are excluded. Shortwindows are clearly marked. Sensitivity runs use lower/central/upper rates as three separate scenarios, not a confidence interval of road improvement. Invalidated line/anchor/threshold settings clear old measurements. All samples use the same detector and tracker.
 
 `PILOT_PLAN.md` contains a proposed2-weekpilot, acceptance targets, customerinterviewquestions and unit-economics assumptions. No customer interviews, paid pilots or savings are claimed. Entry price,subscription and expenses are hypotheses. Actual operational value cannot be replaced with simulated traffic percentages.
+
+## v1.3 — Tashkent and slow network playback
+- Open `/#city` for the real OpenStreetMap basemap of Tashkent with extruded buildings (MapLibre 5.6.0 / OpenFreeMap). Internet required for map tiles; heights may be estimated. No live city traffic or camera integration.
+- The separate network simulation opens in an overview of all directed links. It uses one-second snapshots, source-tagged cohorts and travel-time progress; glyphs represent aggregate groups, not tracked individual vehicles.
+- Playback defaults to 0.5×, supports 1× / 5×, pause, single-second steps and following the next downstream junction. Hidden tabs pause progression; the end stops instead of looping.
+- Detailed snapshots do not alter simulation outcomes: a regression test compares all metrics and common snapshots with the original five-second sampling, including converging links.
