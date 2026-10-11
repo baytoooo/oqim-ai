@@ -1,0 +1,85 @@
+{
+  "checked_date": "2026-10-11",
+  "corridor": "A501 Marylebone Road — Euston Road, London",
+  "straight_segments_total_m": 1373,
+  "note": "Five sampled views, not complete coverage; recordings are not synchronized. Congestion not established by this sample.",
+  "roads": [
+    {
+      "id": "JamCams_00001.07369",
+      "name": "Baker St/Marylebone Rd",
+      "lat": 51.5222,
+      "lon": -0.15768,
+      "videoUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07369.mp4",
+      "imageUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07369.jpg",
+      "lastModified": "Sun, 11 Oct 2026 05:42:18 GMT",
+      "http": 200,
+      "view": "WEST-A501 Marylebone Rd",
+      "duration_s": 10.52,
+      "local_recording": "JamCams_00001.07369.mp4"
+    },
+    {
+      "id": "JamCams_00001.07367",
+      "name": "Marylebone Rd/York Gate",
+      "lat": 51.523,
+      "lon": -0.15271,
+      "videoUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07367.mp4",
+      "imageUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07367.jpg",
+      "lastModified": "Sun, 11 Oct 2026 05:42:19 GMT",
+      "http": 200,
+      "view": "EAST - Marylebone Rd",
+      "duration_s": 9.4,
+      "local_recording": "JamCams_00001.07367.mp4"
+    },
+    {
+      "id": "JamCams_00001.07391",
+      "name": "Marylebone Rd/Great Portland Street",
+      "lat": 51.5239,
+      "lon": -0.1445,
+      "videoUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07391.mp4",
+      "imageUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07391.jpg",
+      "lastModified": "Sun, 11 Oct 2026 05:39:55 GMT",
+      "http": 200,
+      "view": "Zoom - Harley St jct",
+      "duration_s": 10.08,
+      "local_recording": "JamCams_00001.07391.mp4"
+    },
+    {
+      "id": "JamCams_00001.07387",
+      "name": "Euston Rd/Conway St",
+      "lat": 51.5243,
+      "lon": -0.14038,
+      "videoUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07387.mp4",
+      "imageUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07387.jpg",
+      "lastModified": "Sun, 11 Oct 2026 05:39:18 GMT",
+      "http": 200,
+      "view": "West (A501 twds Paddington)",
+      "duration_s": 10.84,
+      "local_recording": "JamCams_00001.07387.mp4"
+    },
+    {
+      "id": "JamCams_00001.07361",
+      "name": "Euston Rd/Tottenham Court Rd",
+      "lat": 51.5249,
+      "lon": -0.13839,
+      "videoUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07361.mp4",
+      "imageUrl": "https://s3-eu-west-1.amazonaws.com/jamcams.tfl.gov.uk/00001.07361.jpg",
+      "lastModified": "Sun, 11 Oct 2026 05:38:52 GMT",
+      "http": 200,
+      "view": "Tottenham Court Rd",
+      "duration_s": 9.4,
+      "local_recording": "JamCams_00001.07361.mp4"
+    }
+  ],
+  "parking": {
+    "location": "CNR Research Area, Pisa, Italy",
+    "type": "archived images, not live video",
+    "cameras": [
+      1,
+      8
+    ],
+    "source": "http://cnrpark.it/",
+    "archive": "https://github.com/fabiocarrara/deep-parking/releases/download/archive/CNR-EXT_FULL_IMAGE_1000x750.tar",
+    "archive_head_http": 200,
+    "license": "ODbL 1.0"
+  }
+}
