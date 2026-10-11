@@ -108,3 +108,6 @@ MapLibre extrusion layers animate metre-sized cars along a Valhalla auto route, 
 
 ### v1.7: parking camera evidence
 Two explicitly simulated camera diagrams show individually marked parking spaces. Changing occupancy recomputes demo availability and reranks walking-distance candidates. Parking cards link back to their camera source. A real uploaded video's last analyzed frame, rectangles and occupancy can be applied to either parking in demo mode; the assignment does not claim that the footage was recorded at that location or is current. Frames remain in browser memory. Live camera access is not configured. Resetting the parking demo resets its corresponding camera diagram. 30 tests pass.
+
+### v1.8: real parking footage
+Bundled 12-second actual parking footage from faisal-ajao/parking-space-counter-opencv (repository MIT notice retained). Seven spaces in the right column are manually marked. The road YOLO model returned no detections on this aerial view, so occupancy for this sample explicitly uses a calibrated per-space dark-pixel baseline rather than pretending detector misses mean empty spaces. The algorithm reads pixels on every sampled frame; no occupancy values are scripted. It is sensitive to illumination and is not a general parking model. Diagnostic snapshots retain per-space states for review. Source is not Tashkent and not live.

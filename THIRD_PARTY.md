@@ -29,3 +29,8 @@ Map style and tiles are requested from https://tiles.openfreemap.org/styles/libe
 - Nominatim https://nominatim.openstreetmap.org/ performs explicit-submit place search scoped to Tashkent, never autocomplete; 1.2 s minimum between submissions.
 - Webster address confirmed at https://ciep.webster.uz/en/contact.php; Ilkhom address at https://www.ilkhom.com/connect/. OSM place IDs: way/1508240410 and node/5599945692. Nearby parking names are geographic descriptions, not an affiliation claim.
 - Demo occupancy values are intentionally simulated and labelled DEMO. Manual values come only from the user's browser and expire after five minutes. No live occupancy feed or reservation is connected.
+
+## Parking video sample (v1.8)
+Source: https://github.com/faisal-ajao/parking-space-counter-opencv/blob/main/video.mp4
+Repository license: MIT, copyright (c) 2025 Faisal Ajao, bundled at dist/samples/parking-real-LICENSE.txt.
+Changes: first 12 seconds, H.264 transcode, audio removed. Seven right-column spaces are manually marked by OQIM for demonstration. Location is not asserted to be Tashkent. License is the source repository's declaration; no live-camera access is implied.
