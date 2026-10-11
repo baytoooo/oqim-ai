@@ -105,3 +105,6 @@ Validation: 28 unit/integration tests and 120 reproducible traffic benchmark out
 
 ### v1.6: cars on the Tashkent map
 MapLibre extrusion layers animate metre-sized cars along a Valhalla auto route, including routes through user-selected map points. Pause, 0.5×/1×/2× speed, count and follow-camera controls are available. This geographic animation is explicitly independent of the aggregate traffic controller simulation and camera detections. At route end cars respawn at the beginning. Cars closer than seven metres are suppressed; count is capped by available route length. The schematic network now spaces transit glyphs and keeps them outside the destination queue zone. 29 tests pass; the 120-scenario benchmark remains reproducible.
+
+### v1.7: parking camera evidence
+Two explicitly simulated camera diagrams show individually marked parking spaces. Changing occupancy recomputes demo availability and reranks walking-distance candidates. Parking cards link back to their camera source. A real uploaded video's last analyzed frame, rectangles and occupancy can be applied to either parking in demo mode; the assignment does not claim that the footage was recorded at that location or is current. Frames remain in browser memory. Live camera access is not configured. Resetting the parking demo resets its corresponding camera diagram. 30 tests pass.
