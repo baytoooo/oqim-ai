@@ -1,0 +1,8 @@
+export function metres(a,b){const R=6371000,r=Math.PI/180,dl=(b[0]-a[0])*r,dp=(b[1]-a[1])*r;return 2*R*Math.asin(Math.min(1,Math.sqrt(Math.sin(dp/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dl/2)**2)));}
+export function publicAccess(p){return !['private','no','customers','permit','residents'].includes(p.tags.access);}
+export function availability(observation,now=Date.now()){
+ if(!observation||!['manual','demo'].includes(observation.kind)||!Number.isFinite(observation.at)||observation.at>now+1000||now-observation.at>300000||!Number.isInteger(observation.free)||observation.free<0)return {state:'unknown',label:'Занятость неизвестна'};
+ return {state:observation.free>0?'free':'full',free:observation.free,kind:observation.kind,at:observation.at,label:observation.free>0?`${observation.free} свободных · ${observation.kind==='demo'?'ДЕМО':'ручная отметка'}`:`Занята · ${observation.kind==='demo'?'ДЕМО':'ручная отметка'}`};
+}
+export function eligible(p,seconds,limitMinutes){return publicAccess(p)&&Number.isFinite(seconds)&&seconds>=0&&seconds<=limitMinutes*60;}
+export function decodePolyline(encoded){let index=0,lat=0,lon=0,coordinates=[];while(index<encoded.length){let result=0,shift=0,b;do{if(index>=encoded.length)throw Error('Некорректный маршрут');b=encoded.charCodeAt(index++)-63;result|=(b&31)<<shift;shift+=5;}while(b>=32);lat+=(result&1)?~(result>>1):result>>1;result=0;shift=0;do{if(index>=encoded.length)throw Error('Некорректный маршрут');b=encoded.charCodeAt(index++)-63;result|=(b&31)<<shift;shift+=5;}while(b>=32);lon+=(result&1)?~(result>>1):result>>1;coordinates.push([lon/1e6,lat/1e6]);}return coordinates;}

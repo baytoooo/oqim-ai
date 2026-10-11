@@ -43,6 +43,7 @@ export function drawNetwork3D(canvas,{nodes,frame,index=0,angle=-25,mode,fractio
  const c=canvas.getContext('2d'),w=canvas.width,h=canvas.height,cols=Math.min(4,nodes.length),rows=Math.ceil(nodes.length/cols);
  const yaw=angle*Math.PI/360,co=Math.cos(yaw),si=Math.sin(yaw),scale=Math.min(1,(h-135)/(rows*135));
  const world=nodes.map((_,i)=>({x:(i%cols-(cols-1)/2)*235,y:(Math.floor(i/cols)-(rows-1)/2)*245}));
+ if(nodes.every(n=>Array.isArray(n.coordinates))){const xs=nodes.map(n=>n.coordinates[0]*.75),ys=nodes.map(n=>-n.coordinates[1]),cx=(Math.min(...xs)+Math.max(...xs))/2,cy=(Math.min(...ys)+Math.max(...ys))/2,k=600/Math.max(.001,Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys));world.forEach((p,i)=>{p.x=(xs[i]-cx)*k;p.y=(ys[i]-cy)*k;});}
  const p=(x,y,z=0)=>({x:w/2+(x*co-y*si)*scale,y:h/2+25+(x*si+y*co)*.48*scale-z*scale});
  function polygon(vertices,color){c.fillStyle=color;c.beginPath();vertices.forEach((v,i)=>{const a=p(...v);i?c.lineTo(a.x,a.y):c.moveTo(a.x,a.y);});c.closePath();c.fill();}
  function box(x,y,dx,dy,dz,color){polygon([[x,y,0],[x+dx,y,0],[x+dx,y,dz],[x,y,dz]],'#375760');polygon([[x+dx,y,0],[x+dx,y+dy,0],[x+dx,y+dy,dz],[x+dx,y,dz]],'#47636c');polygon([[x,y,dz],[x+dx,y,dz],[x+dx,y+dy,dz],[x,y+dy,dz]],color);}

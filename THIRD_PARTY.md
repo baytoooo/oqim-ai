@@ -22,3 +22,10 @@ Full source is distributed under AGPL-3.0. The inherited tracker sources are pre
 ## MapLibre / Tashkent basemap (v1.3)
 MapLibre GL JS 5.6.0, BSD-3-Clause, bundled from the npm package via unpkg; license is in `dist/vendor/MAPLIBRE-LICENSE.txt`. Source: https://github.com/maplibre/maplibre-gl-js/tree/v5.6.0 .
 Map style and tiles are requested from https://tiles.openfreemap.org/styles/liberty (OpenFreeMap), with OpenMapTiles/OpenStreetMap attribution retained in the map. OSM data: https://www.openstreetmap.org/copyright (ODbL). Geometry is real, heights may be estimated; no live traffic, camera locations or measured city signal data are supplied. Tiles require internet. User videos are not transmitted to the tile service.
+
+## Parking discovery and walking routes (v1.4)
+- `dist/data/parking-tashkent.json`: 71 parking objects from an OpenStreetMap API bounding-box extract, bbox 69.249,41.311,69.273,41.329; source links and retrieval time retained. ODbL, © OpenStreetMap contributors. A bounded area around another selected destination is loaded on demand from the OSM API. No capacity is invented from map geometry.
+- Valhalla public routing service https://valhalla1.openstreetmap.de/ uses pedestrian costing at 4.8 km/h for matrix and route requests. Route estimates are separate from occupancy.
+- Nominatim https://nominatim.openstreetmap.org/ performs explicit-submit place search scoped to Tashkent, never autocomplete; 1.2 s minimum between submissions.
+- Webster address confirmed at https://ciep.webster.uz/en/contact.php; Ilkhom address at https://www.ilkhom.com/connect/. OSM place IDs: way/1508240410 and node/5599945692. Nearby parking names are geographic descriptions, not an affiliation claim.
+- Demo occupancy values are intentionally simulated and labelled DEMO. Manual values come only from the user's browser and expire after five minutes. No live occupancy feed or reservation is connected.

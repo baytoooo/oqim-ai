@@ -92,3 +92,13 @@ Directional transfer avoids mixing opposing traffic. The approximate95%Poisson s
 - The separate network simulation opens in an overview of all directed links. It uses one-second snapshots, source-tagged cohorts and travel-time progress; glyphs represent aggregate groups, not tracked individual vehicles.
 - Playback defaults to 0.5×, supports 1× / 5×, pause, single-second steps and following the next downstream junction. Hidden tabs pause progression; the end stops instead of looping.
 - Detailed snapshots do not alter simulation outcomes: a regression test compares all metrics and common snapshots with the original five-second sampling, including converging links.
+
+## v1.4 — Nearby parking
+Open `/#city`, choose a place or click its entrance, then select a 3/5/10 minute walking limit. Parking geometry comes from OSM; Valhalla calculates pedestrian travel times and paths. Private/customer/resident/permit/no-access tags are excluded. Unknown access conditions remain visible. Up to 24 closest candidates are checked; unverified or failed routes are not included.
+`Demo: Webster full` sets explicitly simulated occupancy (nearest lot full, nearby Ilkhom lot five free). Normal mode starts with occupancy unknown. User-entered counts are local-only and expire after five minutes; missing/old/invalid counts never become available spaces. The driving link opens external navigation; the displayed blue route is walking from parking to destination. No live feed, booking, guaranteed space, or guaranteed travel time.
+The user explicitly confirmed on 2026-10-11 that the organizers permit updates and requested publication.
+
+### v1.5: camera projection, selected intersections and allocation
+Each sampled video second has a paired original frame and one 3D instance per vehicle detection, including stationary detections. This is an illustrative projection, not calibrated metric reconstruction. Counts depend on detector recall. Select 2–24 Tashkent map points in travel order to simulate a geographic chain; road connectivity, travel times and phases remain scenario assumptions. Parking allocation compares nearest versus capacity-aware assignment for identical driver demand, with an explicit linear arrival-time forecast. CV occupancy of user-marked spaces can populate scenario A; it is a recorded observation, not a live feed. No shared reservations, live camera integrations or trained parking forecast are claimed.
+
+Validation: 28 unit/integration tests and 120 reproducible traffic benchmark outcomes.
